@@ -1,0 +1,119 @@
+.nav_bar {
+    width: 240px;
+    height: 100vh;
+    background-color: #132450;
+    overflow: hidden;
+}
+
+.nav_bar .logo_area {
+    width: 110px;
+    height: 44px;
+    top: 45px;
+    left: 24px;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.nav_bar .logo_area .logo_text {
+    color: white;
+}
+
+.nav_bar .nav_area {
+    width: 100%;
+    position: relative;
+    top: 76px;
+    padding-left: 24px;
+}
+
+.nav_item {
+    width: 100%;
+    height: 52px;
+    align-items: center;
+    display: flex;
+    padding-left: 12px;
+    cursor: pointer;
+}
+
+.nav_item .nav_item_text {
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav_bar .nav_item.active {
+    background: white;
+    margin-left: 0;
+    padding-left: 12px;
+    width: 100%;
+    border-radius: 30px 0 0 30px;
+    position: relative;
+}
+
+.nav_bar .nav_item.active .nav_item_text {
+    color: #132450;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav_bar .nav_item.active::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: #132450;
+    border-bottom-right-radius: 20px;
+    box-shadow: 4px 4px 0 4px white;
+}
+
+.nav_bar .nav_item.active::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: #132450;
+    border-top-right-radius: 20px;
+    box-shadow: 4px -4px 0 4px white;
+}
+
+.nav_bar .user_info_area {
+    width: 240px;
+    height: 60px;
+    border-top: 1px solid #2F4273;
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.nav_bar .user_info_area .user_details_area {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.nav_bar .user_info_area .user_details_area .user_data {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav_bar .user_info_area .user_details_area .user_data .user_name {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    margin-left: 5px;
+}
