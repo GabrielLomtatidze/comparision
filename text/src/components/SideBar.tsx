@@ -1,4 +1,5 @@
 import '../styles/components/_navBar.css'
+import left_icon from "../assets/left_icon.png"
 import icon from "../assets/main_logo.png"
 import check_icon from "../assets/check.png"
 import spelling_icon from "../assets/Spelling.png"
@@ -14,6 +15,7 @@ export default function Siderbar() {
     return (
         <>
             <div className="nav_bar">
+                <img src={left_icon} alt="left_icon" className="left_icon"/>
                 <div className="logo_area">
                     <img src={icon} alt="logo" />
                     <p className="logo_text">Enagram</p>
