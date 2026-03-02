@@ -8,6 +8,7 @@ import text_icon from "../assets/text_icon.png"
 import documentation_icon from "../assets/document_icon.png"
 import profile_icon from "../assets/user_image.png"
 import dots_icon from "../assets/dots.png"
+import arrow_right from "../assets/arrow_right.png"
 
 export default function Siderbar() {
 
@@ -32,11 +33,11 @@ export default function Siderbar() {
                     </div>
                     <div className="nav_item ">
                         <img src={mic_icon} alt="mic_icon" />
-                        <p className="nav_item_text">ხმა - ტექსტი</p>
+                        <p className="nav_item_text">ხმა <img src={arrow_right} alt="arrow_right" /> ტექსტი</p>
                     </div>
                     <div className="nav_item">
                         <img src={text_icon} alt="text_icon" />
-                        <p className="nav_item_text">ტექსტი - ხმა</p>
+                        <p className="nav_item_text">ტექსტი <img src={arrow_right} alt="arrow_right" /> ხმა</p>
                     </div>
                     <div className="nav_item">
                         <img src={documentation_icon} alt="documentation_icon" />
