@@ -2,18 +2,51 @@ import down_icon from "../assets/down_icon.png"
 import plus_icon from "../assets/plus_icon.png"
 import { useState } from "react"
 import nextTo_icon from "../assets/nextTo_icon.png"
-import Loader from "../components/Loader"
+import retry_icon from "../assets/retry_icon.png"
+import * as Diff from "diff"
+
+type DiffViewProps = {
+    text1: string;
+    text2: string;
+    side: "left" | "right";
+}
 
 export default function TextComparison() {
-
     const [open, setOpen] = useState<boolean>(false);
     const [selected, setSelected] = useState<string>("ქართული");
     const [inputOne, setInputOne] = useState<string>("");
     const [inputTwo, setInputTwo] = useState<string>("");
+    const [isDone, setisDone] = useState<boolean>(false);
 
     const bothEmpty = !inputOne || !inputTwo;
-
     const options = ["ქართული", "English"];
+
+
+    function DiffView({ text1, text2, side }: DiffViewProps) {
+        const diffs = Diff.diffChars(text1, text2);
+
+        return (
+            <div className="diff_result_box">
+                {diffs.map((part, index) => {
+                    if (!part.added && !part.removed) return <span key={index}>{part.value}</span>;
+                    if (part.removed && side === "left") return <span key={index} className="diff_deleted">{part.value}</span>;
+                    if (part.added && side === "right") return <span key={index} className="diff_inserted">{part.value}</span>;
+                    return null;
+                })}
+            </div>
+        );
+    }
+
+    const handleCompare = () => {
+        if (bothEmpty) return;
+        setisDone(true);
+    };
+
+    const handleReset = () => {
+        setInputOne("");
+        setInputTwo("");
+        setisDone(false);
+    };
 
     return (
         <>
@@ -23,13 +56,8 @@ export default function TextComparison() {
                         <div className="left_side">
                             <div className="select" onClick={() => setOpen(!open)}>
                                 <p className="select_text">{selected}</p>
-                                <img
-                                    src={down_icon}
-                                    alt="down_icon"
-                                    className={open ? "rotate" : ""}
-                                />
+                                <img src={down_icon} alt="down_icon" className={open ? "rotate" : ""} />
                             </div>
-
                             {open && (
                                 <div className="dropdown">
                                     {options.map((item) => (
@@ -39,10 +67,7 @@ export default function TextComparison() {
                                                 name="language"
                                                 value={item}
                                                 checked={selected === item}
-                                                onChange={() => {
-                                                    setSelected(item);
-                                                    setOpen(false);
-                                                }}
+                                                onChange={() => { setSelected(item); setOpen(false); }}
                                             />
                                             <span className="radio_text">{item}</span>
                                         </label>
@@ -52,7 +77,7 @@ export default function TextComparison() {
                             <input type="checkbox" className="check_box" />
                             <p className="check_box_text">ფორმატის შენარჩუნება</p>
                         </div>
-                        <button className="new_add_button">
+                        <button className="new_add_button" onClick={handleReset}>
                             <img src={plus_icon} alt="plus_icon" />
                             ახალის გახსნა
                         </button>
@@ -60,18 +85,34 @@ export default function TextComparison() {
 
                     <div className="logic_area">
                         <div className="input_area">
-                            {/* <textarea id="" placeholder="დაიწყე დაწერა..." value={inputOne} onChange={(e) => setInputOne(e.target.value)} />
-                            <img src={nextTo_icon} alt="nextTo_icon" style={{width: "32px", height: "32px"}}/>
-                            <textarea id="" placeholder="დაიწყე დაწერა..." value={inputTwo} onChange={(e) => setInputTwo(e.target.value)} /> */}
-                            <div className="loader_area">
-                                <Loader />
-                            </div>
+                            {!isDone ? (
+                                <>
+                                    <textarea placeholder="დაიწყე დაწერა..." value={inputOne} onChange={(e) => setInputOne(e.target.value)} />
+                                    <img src={nextTo_icon} alt="nextTo_icon" style={{ width: "32px", height: "32px" }} />
+                                    <textarea placeholder="დაიწყე დაწერა..." value={inputTwo} onChange={(e) => setInputTwo(e.target.value)} />
+                                </>
+                            ) : (
+                                <>
+                                    <DiffView text1={inputOne} text2={inputTwo} side="left" />
+                                    <img src={nextTo_icon} alt="nextTo_icon" style={{ width: "32px", height: "32px" }} />
+                                    <DiffView text1={inputOne} text2={inputTwo} side="right" />
+                                </>
+                            )}
                         </div>
-                        <button style={{ backgroundColor: bothEmpty ? "#888991" : "#4571E4" }}>შედარება</button>
-                    </div>
 
+                        {!isDone ? (
+                            <button className="compare_btn" style={{ backgroundColor: bothEmpty ? "#888991" : "#4571E4" }} onClick={handleCompare} disabled={bothEmpty}>
+                                შედარება
+                            </button>
+                        ) : (
+                            <button className="compare_btn retry_btn" onClick={handleReset}>
+                                <img src={retry_icon} alt="retry_icon" />
+                                თავიდან
+                            </button>
+                        )}
+                    </div>
                 </div>
             </div>
         </>
-    )
+    );
 }
