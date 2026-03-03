@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <div style={{ display: "flex"  }}>
+      <div className="app">
         <Siderbar />
 
         <TextComparison />

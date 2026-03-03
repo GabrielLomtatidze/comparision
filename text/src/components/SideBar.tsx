@@ -8,6 +8,7 @@ import documentation_icon from "../assets/document_icon.png"
 import profile_icon from "../assets/user_image.png"
 import dots_icon from "../assets/dots.png"
 import arrow_right from "../assets/arrow_right.png"
+import menu_icon from "../assets/menu_icon.png"
 
 export default function Siderbar() {
 
@@ -17,7 +18,7 @@ export default function Siderbar() {
             <div className="side_bar">
                 <img src={left_icon} alt="left_icon" className="left_icon"/>
                 <div className="logo_area">
-                    <img src={icon} alt="logo" />
+                    <img src={icon} alt="logo" className="logo_icon"/>
                     <p className="logo_text">Enagram</p>
                 </div>
 
@@ -26,6 +27,7 @@ export default function Siderbar() {
                         <img src={check_icon} alt="check_icon" />
                         <p className="nav_item_text">მართლმწერი</p>
                     </div>
+                    <img src={menu_icon} alt="menu_icon" className="menu_icon"/>
                     <div className="nav_item active">
                         <img src={spelling_icon} alt="spelling_icon" />
                         <p className="nav_item_text">ტექსტის შედარება</p>

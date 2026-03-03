@@ -1,6 +1,6 @@
 import down_icon from "../assets/down_icon.png"
 import plus_icon from "../assets/plus_icon.png"
-import { useState, useEffect, useRef } from "react"
+import { useState } from "react"
 import nextTo_icon from "../assets/nextTo_icon.png"
 import retry_icon from "../assets/retry_icon.png"
 import * as Diff from "diff"

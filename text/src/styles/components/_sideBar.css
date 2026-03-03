@@ -27,12 +27,17 @@
     color: white;
 }
 
+.menu_icon{
+    display: none;
+}
+
 .side_bar .nav_area {
     width: 100%;
     position: relative;
     top: 76px;
     padding-left: 24px;
 }
+
 .nav_item {
     width: 100%;
     height: 52px;
@@ -132,4 +137,57 @@
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     margin-left: 5px;
+}
+
+
+@media (max-width: 830px) {
+
+    .side_bar {
+        width: 100vh;
+        height: 60px;
+        background-color: #132450;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    .side_bar .left_icon {
+        display: none;
+    }
+
+    .menu_icon{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        z-index: 99999;
+    }
+
+    .side_bar .logo_area {
+        width: 90px;
+        height: 36px;
+        top: 12px;
+        left: 30px;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+    }
+
+    .logo_icon{
+        width: 34.9px;
+        height: 36px;
+    }
+
+    .side_bar .logo_area .logo_text {
+        color: white;
+        font-size: 12px;
+    }
+
+    .side_bar .nav_area {
+        display: none;
+    }
+
+    .side_bar .user_info_area {
+        display: none;
+
+    }
 }
