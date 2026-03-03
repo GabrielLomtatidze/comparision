@@ -1,5 +1,6 @@
 @import "./components/_sideBar.css";
 @import "./pages/_textComparison.css";
+@import "./components/_loader.css";
 
 
 * {

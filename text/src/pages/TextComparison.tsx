@@ -1,7 +1,8 @@
 import down_icon from "../assets/down_icon.png"
 import plus_icon from "../assets/plus_icon.png"
-import { useState } from "react";
+import { useState } from "react"
 import nextTo_icon from "../assets/nextTo_icon.png"
+import Loader from "../components/Loader"
 
 export default function TextComparison() {
 
@@ -59,9 +60,12 @@ export default function TextComparison() {
 
                     <div className="logic_area">
                         <div className="input_area">
-                            <textarea id="" placeholder="დაიწყე დაწერა..." value={inputOne} onChange={(e) => setInputOne(e.target.value)} />
+                            {/* <textarea id="" placeholder="დაიწყე დაწერა..." value={inputOne} onChange={(e) => setInputOne(e.target.value)} />
                             <img src={nextTo_icon} alt="nextTo_icon" style={{width: "32px", height: "32px"}}/>
-                            <textarea id="" placeholder="დაიწყე დაწერა..." value={inputTwo} onChange={(e) => setInputTwo(e.target.value)} />
+                            <textarea id="" placeholder="დაიწყე დაწერა..." value={inputTwo} onChange={(e) => setInputTwo(e.target.value)} /> */}
+                            <div className="loader_area">
+                                <Loader />
+                            </div>
                         </div>
                         <button style={{ backgroundColor: bothEmpty ? "#888991" : "#4571E4" }}>შედარება</button>
                     </div>
