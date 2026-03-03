@@ -3,6 +3,7 @@
     height: 100vh;
     background-color: #132450;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .nav_bar .left_icon {

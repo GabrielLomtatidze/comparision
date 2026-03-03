@@ -1,4 +1,5 @@
 import Siderbar from './components/SideBar';
+import TextComparison from './pages/TextComparison';
 
 
 function App() {
@@ -6,7 +7,13 @@ function App() {
 
   return (
     <>
-      <Siderbar />
+      <div style={{ display: "flex"  }}>
+        <Siderbar />
+
+        <TextComparison />
+      </div>
+
+
     </>
   )
 }

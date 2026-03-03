@@ -1,0 +1,125 @@
+.text_comparison {
+    width: 100%;
+    height: 100vh;
+    padding: 24px;
+    border: none
+}
+
+.text_comparison .inside_area {
+    width: 100%;
+    height: 100%;
+}
+
+.text_comparison .inside_area .top_area {
+    width: 100%;
+    height: 58px;
+    border-bottom: 1px solid #EDEDED;
+    display: flex;
+    justify-content: space-between;
+}
+
+.text_comparison .inside_area .top_area .left_side {
+    width: 370px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.text_comparison .inside_area .top_area .left_side .select {
+    width: 155px;
+    height: 40px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.text_comparison .inside_area .top_area .left_side .select .select_text {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #383A48;
+}
+
+.dropdown {
+    position: absolute;
+    top: 70px;
+    width: 155px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    background: #fff;
+    padding: 5px 0;
+    z-index: 10;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #383A48;
+}
+
+.option input {
+    cursor: pointer;
+}
+
+.text_comparison .inside_area .top_area .left_side .check_box {
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.text_comparison .inside_area .top_area .left_side .check_box:checked {
+    background-color: #132450;
+    border-color: #132450;
+}
+
+.text_comparison .inside_area .top_area .left_side .check_box:checked::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.text_comparison .inside_area .top_area .left_side .check_box_text {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #383A48;
+    margin-left: 10px;
+}
+
+.text_comparison .inside_area .top_area .new_add_button {
+    width: 150px;
+    height: 42px;
+    border-radius: 6px;
+    padding: 0 10px;
+    border: none;
+    background-color: #888991;
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
