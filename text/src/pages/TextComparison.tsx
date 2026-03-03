@@ -1,9 +1,10 @@
 import down_icon from "../assets/down_icon.png"
 import plus_icon from "../assets/plus_icon.png"
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import nextTo_icon from "../assets/nextTo_icon.png"
 import retry_icon from "../assets/retry_icon.png"
 import * as Diff from "diff"
+import Loader from "../components/Loader"
 
 type DiffViewProps = {
     text1: string;
@@ -17,6 +18,7 @@ export default function TextComparison() {
     const [inputOne, setInputOne] = useState<string>("");
     const [inputTwo, setInputTwo] = useState<string>("");
     const [isDone, setisDone] = useState<boolean>(false);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const bothEmpty = !inputOne || !inputTwo;
     const options = ["ქართული", "English"];
@@ -39,13 +41,20 @@ export default function TextComparison() {
 
     const handleCompare = () => {
         if (bothEmpty) return;
-        setisDone(true);
+        setIsLoading(true);
+
+        const duration = Math.floor(Math.random() * (5000 - 2000 + 1)) + 2000; // 2–5 seconds
+        setTimeout(() => {
+            setIsLoading(false);
+            setisDone(true);
+        }, duration);
     };
 
     const handleReset = () => {
         setInputOne("");
         setInputTwo("");
         setisDone(false);
+        setIsLoading(false);
     };
 
     return (
@@ -85,7 +94,11 @@ export default function TextComparison() {
 
                     <div className="logic_area">
                         <div className="input_area">
-                            {!isDone ? (
+                            {isLoading ? (
+                                <div className="loader_area">
+                                    <Loader />
+                                </div>
+                            ) : !isDone ? (
                                 <>
                                     <textarea placeholder="დაიწყე დაწერა..." value={inputOne} onChange={(e) => setInputOne(e.target.value)} />
                                     <img src={nextTo_icon} alt="nextTo_icon" style={{ width: "32px", height: "32px" }} />
@@ -100,16 +113,16 @@ export default function TextComparison() {
                             )}
                         </div>
 
-                        {!isDone ? (
+                        {!isDone && !isLoading ? (
                             <button className="compare_btn" style={{ backgroundColor: bothEmpty ? "#888991" : "#4571E4" }} onClick={handleCompare} disabled={bothEmpty}>
                                 შედარება
                             </button>
-                        ) : (
+                        ) : isDone ? (
                             <button className="compare_btn retry_btn" onClick={handleReset}>
                                 <img src={retry_icon} alt="retry_icon" />
                                 თავიდან
                             </button>
-                        )}
+                        ) : null}
                     </div>
                 </div>
             </div>

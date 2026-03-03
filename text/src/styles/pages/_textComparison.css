@@ -138,6 +138,16 @@
     align-items: center;
 }
 
+
+.text_comparison .inside_area .logic_area .input_area .loader_area {
+    width: 100%;
+    height: 432px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
 .text_comparison .inside_area .logic_area .input_area textarea {
     width: 47%;
     height: 432px;
