@@ -260,7 +260,7 @@
     }
 
     .dropdown {
-        top: 130px;
+        top: 175px;
     }
 
 }
@@ -292,12 +292,12 @@
     }
 
     .dropdown {
-        width: 100%;
-        top: auto;
+        width: 85%;
+        top: 190px;
     }
 
     .text_comparison .inside_area .top_area .new_add_button {
-        width: 100%;
+        width: 100vh;
         height: 42px;
     }
 
