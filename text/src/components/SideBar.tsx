@@ -16,18 +16,18 @@ export default function Siderbar() {
     return (
         <>
             <div className="side_bar">
-                <img src={left_icon} alt="left_icon" className="left_icon"/>
+                <img src={left_icon} alt="left_icon" className="left_icon" />
                 <div className="logo_area">
-                    <img src={icon} alt="logo" className="logo_icon"/>
+                    <img src={icon} alt="logo" className="logo_icon" />
                     <p className="logo_text">Enagram</p>
                 </div>
+                <img src={menu_icon} alt="menu_icon" className="menu_icon" />
 
                 <div className="nav_area">
                     <div className="nav_item">
                         <img src={check_icon} alt="check_icon" />
                         <p className="nav_item_text">მართლმწერი</p>
                     </div>
-                    <img src={menu_icon} alt="menu_icon" className="menu_icon"/>
                     <div className="nav_item active">
                         <img src={spelling_icon} alt="spelling_icon" />
                         <p className="nav_item_text">ტექსტის შედარება</p>

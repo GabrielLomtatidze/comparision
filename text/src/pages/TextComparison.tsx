@@ -5,6 +5,8 @@ import nextTo_icon from "../assets/nextTo_icon.png"
 import retry_icon from "../assets/retry_icon.png"
 import * as Diff from "diff"
 import Loader from "../components/Loader"
+import spelling_icon from "../assets/Spelling.png"
+
 
 type DiffViewProps = {
     text1: string;
@@ -60,6 +62,13 @@ export default function TextComparison() {
     return (
         <>
             <div className="text_comparison">
+                <div className="selected_page">
+                    <div className="selected_page_item">
+                        <img src={spelling_icon} alt="spelling_icon" />
+                        <p className="selected_page_item_text">ტექსტის შედარება</p>
+                        <img src={down_icon} alt="down_icon" className="down_icon"/>
+                    </div>
+                </div>
                 <div className="inside_area">
                     <div className="top_area">
                         <div className="left_side">
