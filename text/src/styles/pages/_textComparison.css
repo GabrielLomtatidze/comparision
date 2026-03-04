@@ -246,7 +246,7 @@
         align-items: center;
     }
 
-    .text_comparison .selected_page .selected_page_item .selected_page_item_text{
+    .text_comparison .selected_page .selected_page_item .selected_page_item_text {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 700;
         font-style: bold;
@@ -254,13 +254,97 @@
         color: #132450;
     }
 
-    .text_comparison .selected_page .selected_page_item .down_icon{
+    .text_comparison .selected_page .selected_page_item .down_icon {
         width: 14px;
         height: 14px;
     }
-    
+
     .dropdown {
         top: 130px;
     }
 
+}
+
+@media (max-width: 576px) {
+
+    .text_comparison .inside_area .top_area {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #EDEDED;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px 0;
+    }
+
+    .text_comparison .inside_area .top_area .left_side {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .text_comparison .inside_area .top_area .left_side .select {
+        width: 100%;
+        height: 40px;
+    }
+
+    .dropdown {
+        width: 100%;
+        top: auto;
+    }
+
+    .text_comparison .inside_area .top_area .new_add_button {
+        width: 100%;
+        height: 42px;
+    }
+
+    .text_comparison .inside_area .top_area .left_side .check_box {
+        margin-left: 0px;
+    }
+
+    .text_comparison .inside_area .top_area .left_side .check_box_text {
+        margin-left: 0px;
+    }
+
+    .text_comparison .inside_area .top_area .new_add_button {
+        width: 100%;
+        height: 42px;
+    }
+
+    .text_comparison .inside_area .logic_area {
+        height: auto;
+    }
+
+    .text_comparison .inside_area .logic_area .input_area {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+
+    .text_comparison .inside_area .logic_area .input_area textarea {
+        width: 100%;
+        height: 200px;
+        font-size: 14px;
+    }
+
+    .text_comparison .inside_area .logic_area .input_area img {
+        transform: rotate(90deg);
+        align-self: center;
+    }
+
+    .diff_result_box {
+        width: 100%;
+        height: 200px;
+    }
+
+    .text_comparison .inside_area .logic_area .input_area .loader_area {
+        height: 200px;
+    }
+
+    .compare_btn {
+        margin-top: 16px;
+    }
 }
